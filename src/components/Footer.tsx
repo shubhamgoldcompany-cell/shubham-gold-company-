@@ -80,7 +80,8 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="hover:text-[#B5121B] transition-colors"
+                title="Follow Shubham Gold Company on Instagram"
+                className="hover:text-[#E1306C] transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -89,7 +90,8 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="hover:text-[#B5121B] transition-colors"
+                title="Follow Shubham Gold Company on Facebook"
+                className="hover:text-[#1877F2] transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>

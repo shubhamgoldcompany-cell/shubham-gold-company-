@@ -16,7 +16,9 @@ import {
   ShieldCheck,
   Car,
   MessageCircle,
-  Navigation
+  Navigation,
+  Facebook,
+  Instagram
 } from 'lucide-react';
 import { CompanyConfig, OFFICIAL_ADDRESS, OFFICIAL_MAPS_URL } from '../data/config';
 import { redirectToWhatsApp, getWhatsAppUrl } from '../utils/whatsapp';
@@ -180,6 +182,34 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ config }) => {
                   <strong className="text-[#252525] font-bold">Email: </strong>
                   <a href={`mailto:${config.email}`} className="text-gray-800 hover:text-[#B5121B]">
                     {config.email}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 pt-1">
+                <span className="text-xs font-bold text-[#252525] uppercase tracking-wider">Follow Us:</span>
+                <div className="flex items-center gap-2.5">
+                  <a
+                    href={config.socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Shubham Gold Company on Facebook"
+                    title="Follow Shubham Gold Company on Facebook"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-white border border-[#E8CE83]/70 text-gray-800 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors text-xs font-semibold shadow-2xs"
+                  >
+                    <Facebook className="w-3.5 h-3.5 text-[#1877F2] shrink-0" />
+                    <span>Facebook</span>
+                  </a>
+                  <a
+                    href={config.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow Shubham Gold Company on Instagram"
+                    title="Follow Shubham Gold Company on Instagram"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-white border border-[#E8CE83]/70 text-gray-800 hover:text-[#E1306C] hover:border-[#E1306C]/50 transition-colors text-xs font-semibold shadow-2xs"
+                  >
+                    <Instagram className="w-3.5 h-3.5 text-[#E1306C] shrink-0" />
+                    <span>Instagram</span>
                   </a>
                 </div>
               </div>

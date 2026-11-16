@@ -102,8 +102,8 @@ export const DEFAULT_CONFIG: CompanyConfig = {
   timingsSunday: "Sunday: 10:00 AM to 4:00 PM",
   googleMapsUrl: OFFICIAL_MAPS_URL,
   socials: {
-    instagram: "https://instagram.com/shubhamgoldcompany",
-    facebook: "https://facebook.com/shubhamgoldcompany",
+    instagram: "https://www.instagram.com/shubham_gold_company/",
+    facebook: "https://www.facebook.com/profile.php?id=61596321074533",
     googleBusiness: OFFICIAL_MAPS_URL,
     youtube: "https://youtube.com/@shubhamgoldcompany",
     twitter: "https://x.com/shubhamgoldco",
@@ -250,12 +250,22 @@ export function getCompanyConfig(): CompanyConfig {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const parsed = JSON.parse(saved);
+      const savedInstagram = parsed?.socials?.instagram;
+      const savedFacebook = parsed?.socials?.facebook;
       return {
         ...DEFAULT_CONFIG,
         ...parsed,
         socials: {
           ...DEFAULT_CONFIG.socials,
-          ...(parsed?.socials || {})
+          ...(parsed?.socials || {}),
+          instagram:
+            !savedInstagram || savedInstagram === 'https://instagram.com/shubhamgoldcompany'
+              ? DEFAULT_CONFIG.socials.instagram
+              : savedInstagram,
+          facebook:
+            !savedFacebook || savedFacebook === 'https://facebook.com/shubhamgoldcompany'
+              ? DEFAULT_CONFIG.socials.facebook
+              : savedFacebook
         }
       };
     }

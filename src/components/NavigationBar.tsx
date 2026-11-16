@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowUpRight, Phone, MessageCircle, Clock, MapPin } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Phone, MessageCircle, Clock, MapPin, Facebook, Instagram } from 'lucide-react';
 import { CompanyConfig, OFFICIAL_LOGO_URL } from '../data/config';
 
 interface NavigationBarProps {
@@ -293,6 +293,29 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
                   <span className="text-[11px]">
                     Mon–Sat: 9:30 AM – 7:30 PM · Sun: 10:00 AM – 4:00 PM
                   </span>
+                </div>
+                <div className="flex items-center gap-3 pt-1">
+                  <a
+                    href={config.socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-gray-700 hover:text-[#1877F2] transition-colors"
+                  >
+                    <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
+                    <span>Facebook</span>
+                  </a>
+                  <span className="text-gray-300">·</span>
+                  <a
+                    href={config.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-gray-700 hover:text-[#E1306C] transition-colors"
+                  >
+                    <Instagram className="w-3.5 h-3.5 text-[#E1306C]" />
+                    <span>Instagram</span>
+                  </a>
                 </div>
               </div>
 
